@@ -32,7 +32,7 @@ def welcome():
    if request.method == 'POST':
       name = request.form.get('Name')
       session['namaPasien'] = name
-      gejalanya =  session['gejalaPasien']
+      gejalanya = session['gejalaPasien']
       pertanyaan = daftarGejala[gejalanya]
       return render_template("welcome.html", name = name,  pertanyaan = pertanyaan)
 
