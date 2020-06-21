@@ -5,7 +5,7 @@ app.static_folder = 'static'
 
 daftarGejala = ['Gigi terasa ngilu','Gigi terasa berdenyut','Kepala terasa pusing','Terdapat lubang pada gigi','Gusi bengkak','Demam (suhu badan diatas 38 derajat)','Bau mulut','Gusi berwarna merah tua','Gusi rentan berdarah','Adanya plak/karang gigi','Mulut terasa kering','Sering dehidrasi','Lapisan lidah terasa tebal','Cairan ludah berkurang','Adanya benjolan putih/abu','Terasa luka dan pedih','Gigi terasa sakit','Sakit saat mengunyah','Gigi terasa sensitive','Bentuk gigi tampak terkikis','Gigi terasa nyeri saat makan/minum panas dan dingin','Ngilu berkepanjangan (pada gigi)','Gusi menurun','Sakit setelah pencabutan gigi','Sakit sampai kepala,telinga,mata,leher','Gigi tidak sejajar','Perubahan pada wajah','Tidak nyaman ketika ngunyah dan menggigit','Merasa tidak enak pada mulut','Gigi longgar','Lidah membesar','Nyeri pada lidah','Perubahaan warna pada lidah','Permukaan ldah licin','Warna permukaan lidah kemerahan','Gigi terlihat jarang- jarang','Gigi terlihat tonggos kedepan','Ukuran gigi dan rahan tidak sesuai','Adanya bercak pada sudut bibir','Bercak terasa gatal nyeri dan panas pada bibir','Bila di raba, bercak terasa keras pada bibir','Kadang bercak juga bisa berdarah pada bibir','Cadel','Gigi sulung copot sebelum waktunya (prematur)']
 daftarPenyakit = ['Karies gigi (gigi berlubang)','Gingvitis (radang gusi)','Lidah putih','Stomatitis (sariawan)','Abses gigi (gusi bengkak/nanah)','Abrasi gigi (hilangnya struktur gigi)','Gigi sensitive','Alveolar osteitis (peradangan)','Maloklusi (gigi berdesakan)','Resesi gusi (penurunan gusi)','Gloositis (radang lidah)','Crowded (gigi berjejal)','Cheilitis (radang bibir)']
-penjelasanPenyakit = ['']
+solusiPenyakit = ['Tambal Gigi, Perawatan Saluran akar gigi, dan Cabut gigi','Obat pereda nyeri,Obat kumur, dan Obat antibiotik','Minum banyak air untuk membantu menghilangkan bakteri dan Menyikatnya dengan pembersih lidah khusu','Pengobatan stomatitis aftosa,Pengobatan stomatitis herpes','Perawatan saluran akar (root canal),Cabut gigi','Pembuatan Mahkota Gigi (Crown),Penambalan Gigi','Menggosok Gigi dengan benar,Hindari makanan dan minuman asam','Pemberian obat kumur atau gel antibakteri segera sebelum dan sesudah operasi,Pemberian larutan antiseptik diberikan pada luka','Pasang kawat gigi,Cabut gigi','Perawatan dengan scaling dan root planning','Menjaga kesehatan rongga mulut dengan cara menyikat gigi dua kali sehari (setelah sarapan dan sebelum tidur),Perubahan pola makan untuk mengatasi permasalahan nutrisi yang dapat menjadi penyebab terjadinya glositis','Perawatan orthodonsi','Salep anti jamur,Salep antibakteri']
 gejala = 0
 
 def checkGejala():
@@ -177,7 +177,8 @@ def result():
             return redirect(url_for('diagnosa'))
          if session['gejalaPasien'] == 15: # Gejala 4
             terjangkitPenyakit = daftarPenyakit[3]
-            return render_template("result.html", terjangkitPenyakit = terjangkitPenyakit)
+            solusiPenyakitnya = "Solusi: " + solusiPenyakit[3]
+            return render_template("result.html", terjangkitPenyakit = terjangkitPenyakit, solusiPenyakitnya = solusiPenyakitnya, awal = url_for('index'))
          if session['gejalaPasien'] == 27: # Gejala 9
             session['gejalaPasien'] = 42
             session['logs'] = 4
@@ -196,13 +197,16 @@ def result():
             return redirect(url_for('diagnosa'))
          if session['gejalaPasien'] == 21: # Gejala 6
             terjangkitPenyakit = daftarPenyakit[5]
-            return render_template("result.html", terjangkitPenyakit = terjangkitPenyakit)
+            solusiPenyakitnya = "Solusi: " + solusiPenyakit[5]
+            return render_template("result.html", terjangkitPenyakit = terjangkitPenyakit, solusiPenyakitnya = solusiPenyakitnya, awal = url_for('index'))
          if session['gejalaPasien'] == 22: # Gejala 7
             terjangkitPenyakit = daftarPenyakit[6]
-            return render_template("result.html", terjangkitPenyakit = terjangkitPenyakit)
+            solusiPenyakitnya = "Solusi: " + solusiPenyakit[6]
+            return render_template("result.html", terjangkitPenyakit = terjangkitPenyakit, solusiPenyakitnya = solusiPenyakitnya, awal = url_for('index'))
          if session['gejalaPasien'] == 29: # Gejala 7
             terjangkitPenyakit = daftarPenyakit[9]
-            return render_template("result.html", terjangkitPenyakit = terjangkitPenyakit)
+            solusiPenyakitnya = "Solusi: " + solusiPenyakit[9]
+            return render_template("result.html", terjangkitPenyakit = terjangkitPenyakit, solusiPenyakitnya = solusiPenyakitnya, awal = url_for('index'))
          if session['gejalaPasien'] == 7 and session['logs2'] == 1: # Gejala 2
             session['gejalaPasien'] = 8
             session['logs'] = 4
@@ -210,7 +214,8 @@ def result():
             return redirect(url_for('diagnosa'))
          elif session['gejalaPasien'] == 17 and session['logs2'] == 1: # Gejala 5
             terjangkitPenyakit = daftarPenyakit[4]
-            return render_template("result.html", terjangkitPenyakit = terjangkitPenyakit)
+            solusiPenyakitnya = "Solusi: " + solusiPenyakit[4]
+            return render_template("result.html", terjangkitPenyakit = terjangkitPenyakit, solusiPenyakitnya = solusiPenyakitnya, awal = url_for('index'))
 
       #=============================================================Logs 4
       elif session['logs'] == 4 and checkGejala():
@@ -224,20 +229,24 @@ def result():
             return redirect(url_for('diagnosa'))
          if session['gejalaPasien'] == 13: # Gejala 3
             terjangkitPenyakit = daftarPenyakit[2]
-            return render_template("result.html", terjangkitPenyakit = terjangkitPenyakit)
+            solusiPenyakitnya = "Solusi: " + solusiPenyakit[2]
+            return render_template("result.html", terjangkitPenyakit = terjangkitPenyakit, solusiPenyakitnya = solusiPenyakitnya, awal = url_for('index'))
          if session['gejalaPasien'] == 42: # Gejala 9
             terjangkitPenyakit = daftarPenyakit[8]
-            return render_template("result.html", terjangkitPenyakit = terjangkitPenyakit)
+            solusiPenyakitnya = "Solusi: " + solusiPenyakit[8]
+            return render_template("result.html", terjangkitPenyakit = terjangkitPenyakit, solusiPenyakitnya = solusiPenyakitnya, awal = url_for('index'))
          if session['gejalaPasien'] == 33: # Gejala 11
             session['gejalaPasien'] = 34
             session['logs'] = 5
             return redirect(url_for('diagnosa'))
          if session['gejalaPasien'] == 43: # Gejala 12
             terjangkitPenyakit = daftarPenyakit[11]
-            return render_template("result.html", terjangkitPenyakit = terjangkitPenyakit)
+            solusiPenyakitnya = "Solusi: " + solusiPenyakit[11]
+            return render_template("result.html", terjangkitPenyakit = terjangkitPenyakit, solusiPenyakitnya = solusiPenyakitnya, awal = url_for('index'))
          if session['gejalaPasien'] == 41: # Gejala 13
             terjangkitPenyakit = daftarPenyakit[12]
-            return render_template("result.html", terjangkitPenyakit = terjangkitPenyakit)
+            solusiPenyakitnya = "Solusi: " + solusiPenyakit[12]
+            return render_template("result.html", terjangkitPenyakit = terjangkitPenyakit, solusiPenyakitnya = solusiPenyakitnya, awal = url_for('index'))
          if session['gejalaPasien'] == 8 and session['logs2'] == 1: # Gejala 2
             session['gejalaPasien'] = 9
             session['logs'] = 5
@@ -252,19 +261,23 @@ def result():
             return redirect(url_for('diagnosa'))
          if session['gejalaPasien'] == 24: # Gejala 8
             terjangkitPenyakit = daftarPenyakit[7]
-            return render_template("result.html", terjangkitPenyakit = terjangkitPenyakit)
+            solusiPenyakitnya = "Solusi: " + solusiPenyakit[7]
+            return render_template("result.html", terjangkitPenyakit = terjangkitPenyakit, solusiPenyakitnya = solusiPenyakitnya, awal = url_for('index'))
          if session['gejalaPasien'] == 34: # Gejala 11
             terjangkitPenyakit = daftarPenyakit[10]
-            return render_template("result.html", terjangkitPenyakit = terjangkitPenyakit)
+            solusiPenyakitnya = "Solusi: " + solusiPenyakit[10]
+            return render_template("result.html", terjangkitPenyakit = terjangkitPenyakit, solusiPenyakitnya = solusiPenyakitnya, awal = url_for('index'))
          if session['gejalaPasien'] == 9 and session['logs2'] == 1: # Gejala 2
             terjangkitPenyakit = daftarPenyakit[1]
-            return render_template("result.html", terjangkitPenyakit = terjangkitPenyakit)
+            solusiPenyakitnya = "Solusi: " + solusiPenyakit[1]
+            return render_template("result.html", terjangkitPenyakit = terjangkitPenyakit, solusiPenyakitnya = solusiPenyakitnya, awal = url_for('index'))
 
       #=============================================================Logs 6
       elif session['logs'] == 6 and checkGejala():
          if session['gejalaPasien'] == 17: # Gejala 1
             terjangkitPenyakit = daftarPenyakit[0]
-            return render_template("result.html", terjangkitPenyakit = terjangkitPenyakit, awal = url_for('index'))
+            solusiPenyakitnya = "Solusi: " + solusiPenyakit[0]
+            return render_template("result.html", terjangkitPenyakit = terjangkitPenyakit, solusiPenyakitnya = solusiPenyakitnya, awal = url_for('index'))
 
       #=============================================================Logs 1      
       else:
@@ -323,10 +336,10 @@ def result():
             return redirect(url_for('diagnosa'))
          elif session['gejalaPasien'] == 38: # Tidak ada gejala
             terjangkitPenyakit = "Anda tidak terjangkit apapun"
-            return render_template("result.html", terjangkitPenyakit = terjangkitPenyakit)
+            return render_template("result.html", terjangkitPenyakit = terjangkitPenyakit, awal = url_for('index'))
          else:
             terjangkitPenyakit = "Maaf Sistem kami belum bisa menjawab pertanyaan anda"
-            return render_template("result.html", terjangkitPenyakit = terjangkitPenyakit)
+            return render_template("result.html", terjangkitPenyakit = terjangkitPenyakit, awal = url_for('index'))
          
 
 @app.route('/diagnosa',methods = ['POST', 'GET'])
