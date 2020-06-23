@@ -71,6 +71,17 @@ body {
   border: 1px solid rgba(34, 34, 34, 0.2);
   border-radius: 3px;
 }
+.input-nama {
+  font-family: 'Raleway', sans-serif;
+  width: 50px;
+  height: 30px;
+  padding: 3px 15px;
+  color: #222;
+  font-size: 18px;
+  background: #f8fafb;
+  border: 1px solid rgba(34, 34, 34, 0.2);
+  border-radius: 3px;
+}
 
 .notfound-search button {
   font-family: 'Raleway', sans-serif;

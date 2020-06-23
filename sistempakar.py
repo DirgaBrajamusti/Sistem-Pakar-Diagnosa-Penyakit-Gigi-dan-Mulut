@@ -25,7 +25,7 @@ def index():
    session['gejalaPasien'] = 0
    session['logs'] = 0
    session['logs2'] = 0
-   return render_template('index.html')
+   return render_template('index.html', link = url_for('index'))
 
 @app.route('/welcome',methods = ['POST', 'GET'])
 def welcome():
@@ -34,7 +34,7 @@ def welcome():
       session['namaPasien'] = name
       gejalanya = session['gejalaPasien']
       pertanyaan = daftarGejala[gejalanya]
-      return render_template("welcome.html", name = name,  pertanyaan = pertanyaan)
+      return render_template("welcome.html", name = name,  pertanyaan = pertanyaan, link = url_for('index'))
 
 @app.route('/result',methods = ['POST', 'GET'])
 def result():
@@ -346,7 +346,7 @@ def result():
 def diagnosa():
    name = session['namaPasien']
    pertanyaan = daftarGejala[session['gejalaPasien']]
-   return render_template("diagnosa.html", pertanyaan = pertanyaan, name = name)
+   return render_template("diagnosa.html", pertanyaan = pertanyaan, name = name, link = url_for('index'))
    
 if __name__ == '__main__':
    app.run(debug = True)

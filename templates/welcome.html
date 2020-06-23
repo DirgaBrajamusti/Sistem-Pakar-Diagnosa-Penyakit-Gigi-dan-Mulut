@@ -21,7 +21,7 @@
 				<h1>Diagnosa untuk: {{ name }}</h1>
 			</div>
 			<h2>Apakah {{ pertanyaan }}?</h2>
-			<form action = "http://localhost:5000/result" method = "POST" class="notfound-search">
+			<form action = "{{ link }}result" method = "POST" class="notfound-search">
 				<input type="radio" id="ya" name="pilihan" value="ya">
             <label for="ya">Ya</label>
             <input type="radio" id="tidak" name="pilihan" value="tidak">
