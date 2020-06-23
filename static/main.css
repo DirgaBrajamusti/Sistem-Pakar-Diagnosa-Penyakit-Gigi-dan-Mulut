@@ -113,10 +113,10 @@ body {
 
 @media only screen and (max-width: 767px) {
   .notfound .notfound-404 {
-    height: 122px;
-    line-height: 122px;
+    height: 50;
+    line-height: 50px;
   }
   .notfound .notfound-404 h1 {
-    font-size: 122px;
+    font-size: 50px;
   }
 }
