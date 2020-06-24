@@ -71,6 +71,20 @@ body {
   border: 1px solid rgba(34, 34, 34, 0.2);
   border-radius: 3px;
 }
+
+.notfound-searching input {
+  font-family: 'Raleway', sans-serif;
+  width: 200px;
+  height: 30px;
+  text-align: center;
+  padding: 3px 15px;
+  color: #222;
+  font-size: 18px;
+  background: #f8fafb;
+  border: 1px solid rgba(34, 34, 34, 0.2);
+  border-radius: 3px;
+}
+
 .input-nama {
   font-family: 'Raleway', sans-serif;
   width: 50px;
@@ -86,6 +100,24 @@ body {
 .notfound-search button {
   font-family: 'Raleway', sans-serif;
   position: absolute;
+  right: 0px;
+  top: 0px;
+  width: 120px;
+  height: 40px;
+  text-align: center;
+  border: none;
+  background: #222;
+  cursor: pointer;
+  padding: 0;
+  color: #fff;
+  font-weight: 700;
+  font-size: 18px;
+  border-radius: 3px;
+}
+
+.notfound-searching button {
+  font-family: 'Raleway', sans-serif;
+  position: relative;
   right: 0px;
   top: 0px;
   width: 120px;
